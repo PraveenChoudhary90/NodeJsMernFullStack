@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="pink">
+
+     <a href="/students/home">home</a>
+    <a href="/students/insert">insert</a>
+    <a href="/students/display">display</a>
+  
+     <hr size="4" color="red">
+     <h1>student data display page</h1>
+     <hr size="4" color="red">
+
+
+     <table align="center"  width= "500px" bgcolor = "yellow" border="1" >
+        <tr>
+            <th>rollnumber</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>fees</th>
+        </tr>
+        <%
+        mydata.forEach((key)=>{
+            %>
+         
+            <tr>
+                <td><%= key.rollnumber %></td>
+                <td><%= key.name %></td>
+                <td><%= key.city %></td>
+                <td><%= key.fees %></td>
+            </tr>
+
+
+        <%
+        })
+        %>
+     </table>
+
+    
+</body>
+</html>

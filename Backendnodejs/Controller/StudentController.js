@@ -12,7 +12,7 @@ const Aboutpage = (req, res)=>{
     res.render("about");
 }
 
-const Insertpage = async (req ,res)=>{
+const Savepage = async (req ,res)=>{
    const {rollnumber, name, city, fees} = req.body;
    let data = await Studentmodel.create({
     rollnumber:rollnumber,
@@ -28,8 +28,8 @@ const Insertpage = async (req ,res)=>{
 const Displaypage = (req ,res)=>{
     res.render("display")
 }
-const Savepage = (req,res)=>{
-    res.send("okkkkkkkkkkkkkkkkkkkkkkkkkkk");
+const Insertpage = (req,res)=>{
+    res.render("insert");
 }
 
 module.exports = {

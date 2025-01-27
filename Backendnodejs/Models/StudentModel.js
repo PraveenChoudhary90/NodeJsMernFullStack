@@ -4,7 +4,7 @@ const StudentSchema = new mongoose.Schema({
     name:String,
     city:String,
     fees:Number
+})
 
-});
+module.exports =   mongoose.model("praveen", StudentSchema);
 
-module.exports = mongoose.model("datastudent", StudentSchema);

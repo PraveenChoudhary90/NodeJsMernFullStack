@@ -25,11 +25,19 @@ const Savepage = async (req ,res)=>{
     res.render("insert");
 }
 
-const Displaypage = (req ,res)=>{
-    res.render("display")
+const Displaypage = async(req ,res)=>{
+    let Data =await Studentmodel.find();
+    res.send(Data);
 }
 const Insertpage = (req,res)=>{
     res.render("insert");
+}
+
+
+const searchpage=async(req, res)=>{
+  const { sturno } =req.body;
+  const Data=await   Studentmodel.find({rollnumber:sturno});
+  res.send(Data);
 }
 
 module.exports = {
@@ -37,5 +45,6 @@ module.exports = {
     Aboutpage,
     Insertpage,
     Displaypage,
-    Savepage
+    Savepage,
+    searchpage
 }

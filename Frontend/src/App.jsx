@@ -6,6 +6,7 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Insert from './Pages/Insert'
 import Display from './Pages/Display'
+import Search from './Pages/Search'
 function App() {
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path='/about' element={<About/>} ></Route>
           <Route path='/insert' element={<Insert/>} ></Route>
           <Route path='/display' element={<Display/>} ></Route>
+          <Route path='/search' element={<Search/>} ></Route>
         </Route>
       </Routes>
     </>

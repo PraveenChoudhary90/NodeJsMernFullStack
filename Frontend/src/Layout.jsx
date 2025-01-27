@@ -8,6 +8,7 @@ const Layout = ()=>{
             <li><Link to="/about" >About</Link></li>
             <li><Link to="/insert" >Insert</Link></li>
             <li><Link to="/display" >Display</Link></li>
+            <li><Link to="/search" >Search</Link></li>
         </ul>
         <main><Outlet/></main>
         </>

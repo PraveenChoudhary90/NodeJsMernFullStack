@@ -1,8 +1,17 @@
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Data from './Data'
-import Footer from './Footer'
-import Header from './Header'
+// import Footer from './Footer'
+// import Header from './Header'
+import Layout from './Layout'
+import Home from './Home'
+import About from './About'
+import Contact from './Contact'
+import Nopage from './Nopage'
+import AboutCompany from './AboutCompany'
+import AboutProduct from './AboutProduct'
+import AboutService from './AboutServices'
 // const crs = <ol>
 //   <li>php</li>
 //   <li>mern</li>
@@ -14,9 +23,9 @@ function App() {
 
   return (
     <>
-    <Header/>
+    {/* <Header/>
     <Data/>
-    <Footer/>
+    <Footer/> */}
       {/* <h1>our course{crs}</h1>
       <h1>our course{crs}</h1>
       <h1>our course{crs}</h1> */}
@@ -33,6 +42,29 @@ function App() {
       </select>
       <br></br>
       Enter comment:<textarea id="w3review" name="w3review" rows="4" cols="50"/> */}
+      <BrowserRouter>
+      <Routes>
+
+<Route path='/' element={<Layout/>}>
+<Route index element={<Home/>}/>
+<Route path='home' element={<Home/>}/>
+<Route path='about' element={<About/>}>
+<Route index element={<AboutCompany/>}/>
+<Route path='aboutc' element={<AboutCompany/>} />
+<Route path='aboutp' element={<AboutProduct/>} />
+<Route path='abouts' element={<AboutService/>}/> 
+</Route>
+
+<Route path='data' element={<Data/>}/>
+<Route path='contact' element={<Contact/>}/>
+<Route path='*' element={<Nopage/>}/>
+
+
+</Route>
+
+      </Routes>
+      
+      </BrowserRouter>
 
     </>
   )

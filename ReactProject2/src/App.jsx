@@ -9,6 +9,8 @@ import Nopage from './Pages/Nopage'
 import AboutCompany from './Pages/AboutCompany'
 import AboutProduct from './Pages/AboutProduct'
 import AboutService from './Pages/AboutServices'
+import ContactTeam from './Pages/ContactTeam'
+import ContactManager from './Pages/ContactManager'
 function App() {
   
 
@@ -24,7 +26,11 @@ function App() {
       <Route path='aboutp' element={<AboutProduct/>}/>
       <Route path='abouts' element={<AboutService/>}/>
       </Route>
-      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/contact' element={<Contact/>}>
+      <Route index element={<ContactTeam/>}/>
+      <Route path='contactteam' element={<ContactTeam/>}/>
+      <Route path='contactmanager' element={<ContactManager/>}/>
+      </Route>
       <Route path='*' element={<Nopage/>}/>
 
       </Route>

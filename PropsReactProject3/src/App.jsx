@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <h1 align="center">Welcome to my home screen</h1>
+    <h1 align="center">Welcome to my react home screen</h1>
     <table align='center' border={1} bgcolor='yellow'>
       <tr>
         <th>Rollnumber</th>

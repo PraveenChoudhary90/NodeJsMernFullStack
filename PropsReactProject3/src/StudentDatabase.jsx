@@ -1,0 +1,39 @@
+const Studata = [
+    {
+        "rollnumber":111,
+        "name":"praveen",
+        "subject":"mern",
+        "fees":45000
+    },
+     {
+        "rollnumber":112,
+        "name":"pradum",
+        "subject":"html",
+        "fees":46000
+    },
+     {
+        "rollnumber":113,
+        "name":"rohit",
+        "subject":"css",
+        "fees":47000
+    },
+     {
+        "rollnumber":114,
+        "name":"rahul",
+        "subject":"java script",
+        "fees":48000
+    },
+     {
+        "rollnumber":115,
+        "name":"visal",
+        "subject":"react",
+        "fees":49000
+    },
+     {
+        "rollnumber":116,
+        "name":"lucky",
+        "subject":"node",
+        "fees":50000
+    }
+];
+export default Studata;

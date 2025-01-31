@@ -1,0 +1,19 @@
+body{
+    background-color: pink;
+}
+.data{
+    color: red;
+    text-decoration: underline;
+}
+.data1{
+    color: blue;
+    text-decoration: underline;
+}
+.data2{
+    color: yellow;
+    text-decoration: underline;
+}
+img{
+    width: 400px;
+    height: 400px;
+}

@@ -1,3 +1,4 @@
+import { IoIosAirplane } from "react-icons/io";
 
 import './App.css'
 import Collage from './Collage'
@@ -31,6 +32,8 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
+
 const ans = Studata.map((key)=><StudentStyle  rollno={key.rollnumber} name={key.name} sub={key.subject} fs={key.fees}  />)
 
 function App() {
@@ -58,9 +61,16 @@ function App() {
       <Col className='bg-success' md="3" >1  of 1</Col>
       <Col className='bg-info' md="3" >1  of 1</Col>
       <Col className='bg-danger' md="3" >1  of 1</Col>
-     
+    </Row>
+     <Row>
+      <Col className='bg-primary' md="3" ><IoIosAirplane /></Col>
+      <Col className='bg-primary' md="3" ><IoIosAirplane /></Col>
+      <Col className='bg-primary' md="3" ><IoIosAirplane /></Col>
+      <Col className='bg-primary' md="3" ><IoIosAirplane /></Col>
+    
     </Row>
    </Container>
+      
 
 
 

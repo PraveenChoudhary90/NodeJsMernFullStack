@@ -6,13 +6,7 @@ const StudentController = require("../Controller/StudentController");
 
 
 
-route.post("savadata", StudentController.Savedata);
-
-
-
-
-
-
+route.post("/savadata", StudentController.Savedata);
 
 
 

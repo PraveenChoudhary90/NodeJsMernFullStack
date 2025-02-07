@@ -13,14 +13,14 @@ app.use(bodyParser.json());
 
 
 
-mongoose.connect("").then(()=>{
+mongoose.connect("mongodb://127.0.0.1:27017/praveen").then(()=>{
     console.log("DB Connected!!!!!");
 })
 
 
 
 
-app.use("/Employee" , StudentRoute);
+app.use("/employee" , StudentRoute);
 app.listen(8000,()=>{
     console.log("server is running on 8000 port");
 })

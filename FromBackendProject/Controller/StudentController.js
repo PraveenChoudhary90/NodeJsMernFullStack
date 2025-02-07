@@ -1,7 +1,7 @@
 const StudentModel = require("../Model/StudentModel");
 const Savedata = async(req,res)=>{
     // res.send("okkkkk");
-    // console.log(req.body);
+    console.log(req.body);
     const {name,rollnumber,city,fees}=req.body;
     const data= await StudentModel.create({
         name:name,

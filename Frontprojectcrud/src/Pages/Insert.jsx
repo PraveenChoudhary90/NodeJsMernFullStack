@@ -2,7 +2,7 @@ const Insert = ()=>{
     return(
         <>
         
-    <h1> Insert page</h1>
+    <h1> Insert Employee Data</h1>
         </>
     )
 }

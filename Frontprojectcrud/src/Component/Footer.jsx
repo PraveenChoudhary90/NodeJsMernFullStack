@@ -1,8 +1,10 @@
 const Footer = ()=>{
     return(
         <>
-        
-    <h1> Footer page</h1>
+        <div id="footer">
+            www.mycompany.com
+        </div>
+   
         </>
     )
 }

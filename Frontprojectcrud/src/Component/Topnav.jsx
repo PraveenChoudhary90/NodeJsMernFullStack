@@ -1,8 +1,15 @@
+import { Outlet } from "react-router-dom";
+import Layout from "../Layout";
+import Footer from "./Footer";
+
 const Topnav = ()=>{
     return(
         <>
-        
-    <h1> Topnav page</h1>
+      <Layout/>
+      <div id="heading">
+      <main><Outlet/></main>
+      </div>
+      <Footer/>
         </>
     )
 }

@@ -1,47 +1,53 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios"
 import Table from 'react-bootstrap/Table';
+
 const Display = ()=>{
 
-    const [value, setValue]=useState([])
+    const [user, setUser]= useState([]);
 
-    const loaddata =()=>{
+    const Getdata =async()=>{
         const api = "http://localhost:8000/employee/displaydata";
-        axios.get(api).then((res)=>{
-        setValue(res.data);
-          
-        });
+       await axios.get(api).then((res)=>{
+       setUser(res.data);
+       console.log(res.data);
+        })
     }
-
     useEffect(()=>{
-   loaddata()
+        Getdata();
     },[]);
 
-    const ans=value.map((item)=>{
+
+    const ans= user.map((key)=>{
+        return(
+            <tbody>
+            <tr>
+            <td>{key.name}</td>
+            <td>{key.empno}</td>
+            <td>{key.designation}</td>
+            <td>{key.salary}</td>
+            </tr>
+            </tbody>
+        )
+    })
     
-        <tr>
-            <td>{item.name}</td>
-            <td>{item.empno}</td>
-            <td>{item.designation}</td>
-            <td>{item.salary}</td>
-        </tr>
-    
-})
     return(
         <>
         
     <h1> Employee Display Data here</h1>
-        <Table striped bordered hover>
-      <thead>
+         <Table striped bordered hover>
+            <thead>
         <tr>
           <th>Employee Name</th>
-          <th>Employee No</th>
+          <th>Employee Number</th>
           <th>Employee Designation</th>
-          <th>Salary</th>
-          {ans}
+          <th>Employee Salary</th>
         </tr>
-      </thead>
+        </thead>
+        {ans}
     </Table>
+
+
 
 
         </>

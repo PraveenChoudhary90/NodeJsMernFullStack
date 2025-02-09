@@ -1,9 +1,78 @@
-const Update = ()=>{
+import { useEffect, useState } from "react"
+import Table from 'react-bootstrap/Table';
+import axios from "axios"
+import { FaTrash } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
+import { message } from "antd";
+import { useNavigate } from "react-router-dom";
+const Update=()=>{
+const navigate=useNavigate()
+const handleEdit=(id)=>{;
+   navigate(`/edit/${id}`);
+}
+
+
+
+
+const [data, setdata]=useState([])
+
+const getdata=()=>{
+    let api="http://localhost:8000/employee/getdata"
+     axios.get(api).then((res)=>{
+        setdata(res.data)
+    })
+}
+
+const handleDelete=(id)=>{
+    let api='http://localhost:8000/employee/deletedata';
+    axios.post(api,{id:id}).then((res)=>{
+       message.success(res.data)
+       getdata()
+    })
+}
+
+
+useEffect(()=>{
+    getdata()
+},[])
+
+const ans=data.map((item)=>{
+    return(
+        <tr>
+            <td>{item.name}</td>
+            <td>{item.empno}</td>
+            <td>{item.desigation}</td>
+            <td>{item.salary}</td>
+            <td onClick={()=>handleEdit(item._id)} id="edit"><FaPen /></td>
+            <td onClick={()=>handleDelete(item._id)} id="delete"><FaTrash /></td>
+        </tr>
+    )
+})
+
+
+
     return(
         <>
-        
-    <h1> Update page</h1>
+        <h1 style={{textAlign:"center",marginBottom:"20px",backgroundColor:"#4CAF50",color:"white",padding:"20px",borderRadius:"10px 10px 0 0"}}>Update Page</h1>
+<div style={{width:"70%",marginLeft:"20%",backgroundColor:"#f0f0f0",padding:"20px",borderRadius:"0 0 10px 10px"}} className="table-responsive"  >
+        <Table striped bordered hover style={{fontSize:"20px"}}>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Empno</th>
+          <th>Designation</th>
+          <th>salary</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+ {ans}
+      </tbody>
+    </Table>
+    </div>
         </>
     )
 }
+
 export default Update;

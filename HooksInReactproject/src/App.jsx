@@ -1,8 +1,13 @@
 
 // import { useRef } from 'react'
+import { useState } from 'react'
 import './App.css'
-import ReducerColor from './ReducerColor'
-import ReducresHook from './Reducershook'
+import UseCallBackHook from './UseCallBackhook'
+import UseMemoHook from './UseMemoHook'
+import UseMemo from './UseMemorisetion'
+import { useCallback } from 'react'
+// import ReducerColor from './ReducerColor'
+// import ReducresHook from './Reducershook'
 
 function App() {
   // const myRef = useRef("");
@@ -31,10 +36,28 @@ function App() {
   //   myRef.current.style.width = "600px";
 
   // }
+ 
+  const [count, setCount]=useState(0);
+  const [task,setTask]=useState([]);
+    
+
+  const myAdd = ()=>{
+    setTask(values=>([...values,"New Task"]));
+  }
+
+  const MyAddData = useCallback(myAdd, [task]);
+
+
+
 
   return (
     <>
-    <ReducerColor/>
+    <h1>Count:{count}</h1>
+    <UseCallBackHook task={task} Addtask={MyAddData} />
+    <button onClick={()=>{setCount(count+1)}} >click here</button>
+    {/* <UseMemoHook/> */}
+    {/* <UseMemo/> */}
+    {/* <ReducerColor/> */}
    {/* <ReducresHook/> */}
      {/* <h1>Welcome</h1> */}
      {/* <div ref={myRef}>

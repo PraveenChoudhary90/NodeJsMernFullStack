@@ -26,28 +26,41 @@ const Searchdata = async (req, res) => {
  
 };
 
-const deletedata = async (req, res) => {
-  const { id } = req.body;
-  await EmpModel.findByIdAndDelete(id);
-  res.json("Data is Deleted");
-};
 
-const editShow = async (req, res) => {
-  const { id } = req.body;
-  const stude = await EmpModel.findById(id);
-  res.send(stude);
-};
-const dataSaveEdit = async (req, res) => {
-  const { _id } = req.body;
-  await EmpModel.findByIdAndUpdate(_id, req.body);
-  res.send("Data Updated");
-};
+const Getdata =async (req,res)=>{
+ const Data = await EmpModel.find();
+ console.log(Data);
+ res.send(Data);
+}
+
+
+const Deletedata=async(req,res)=>{
+ const {id}=req.body;
+  await EmpModel.findByIdAndDelete(id);
+ res.json("Data is delete succesfully")
+
+}
+
+const Editdata=async(req,res)=>{
+  const {id}=req.body;
+  const Data = await EmpModel.findById(id);
+  res.send(Data);
+}
+
+const EditUpdateData=async(req,res)=>{
+  const {_id}= req.body;
+  await EmpModel.findByIdAndUpdate(_id,req.body);
+  res.send("data succefully update")
+}
+
 
 module.exports = {
   Insertdata,
   Displaydata,
   Searchdata,
-  deletedata,
-  editShow,
-  dataSaveEdit,
+  Getdata,
+  Deletedata,
+  Editdata,
+  EditUpdateData
+  
 };

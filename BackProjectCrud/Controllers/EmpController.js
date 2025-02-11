@@ -50,7 +50,7 @@ const Editdata=async(req,res)=>{
 const EditUpdateData=async(req,res)=>{
   const {_id}= req.body;
   await EmpModel.findByIdAndUpdate(_id,req.body);
-  res.send("data succefully update")
+  res.send("")
 }
 
 

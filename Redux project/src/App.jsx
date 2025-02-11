@@ -12,6 +12,8 @@ function App() {
   <button onClick={()=>{dispatch(increment())}}>Increment</button>
   <h1>Count:{count}</h1>
   <button onClick={()=>{dispatch(decrement())}}>Decrement</button>
+  <button>Click here</button>
+  
     </>
   )
 }

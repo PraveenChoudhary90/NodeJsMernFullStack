@@ -39,14 +39,16 @@ const Handelupdate=(id)=>{
     const ans = val.map((key)=>{
         return(
             <>
+            <thead>
             <tr>
                 <td>{key.name}</td>
                 <td>{key.empno}</td>
                 <td>{key.designation}</td>
                 <td>{key.salary}</td>
-                <td onClick={()=>{Handeldelete(key._id)}} ><MdDelete />Delete</td>
-                <td onClick={()=>{Handelupdate(key._id)}} ><FaPen />Update</td>
+                <td onClick={()=>{Handeldelete(key._id)}} ><MdDelete /></td>
+                <td onClick={()=>{Handelupdate(key._id)}} ><FaPen /></td>
             </tr>
+            </thead>
             
             </>
         )

@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const counterSice = createSlice({
     name:"mycount",
     initialState:{
-        count:0
+        count:0,
+        color:"yellow"
     },
     reducers:{
         increment:(state)=>{
@@ -10,8 +11,11 @@ const counterSice = createSlice({
         },
         decrement:(state)=>{
             state.count = state.count-1; //state.count--
-        }
+        },
+         Mybgcolor:(state)=>{
+            state.color="blue";
+         }
     }
 })
- export const {increment,decrement}=counterSice.actions;
+ export const {increment,decrement,Mybgcolor}=counterSice.actions;
  export default counterSice.reducer;

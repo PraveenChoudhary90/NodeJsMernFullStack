@@ -22,7 +22,7 @@ const TaskSlice = createSlice({
     },
     Mydelete:(state,actions)=>{
         console.log(actions.payload);
-        state.task=state.task.filter(e=>console.log(e.id==actions.payload));
+        state.task=state.task.filter(key=>key.id!==actions.payload);
 
         
     }

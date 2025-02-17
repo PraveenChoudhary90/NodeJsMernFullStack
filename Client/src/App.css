@@ -1,0 +1,13 @@
+#footer{
+  padding: 50px;
+  background-color: lightblue;
+  text-align: center;
+}
+
+#mydata{
+  margin: 40px;
+}
+#myfrom{
+  width: 50%;
+  margin: auto;
+}

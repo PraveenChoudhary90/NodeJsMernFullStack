@@ -10,7 +10,6 @@ function App() {
   const mydata = useSelector((state) => state.todolist.task);
   const dispatch = useDispatch();
   const [workId, setWorkId] = useState("");
-  const [editinput, seteditinput] = useState("");
   // console.log(mydata)
 
   const EditTask = (id, work) => {
@@ -20,7 +19,6 @@ function App() {
 
   const myEditSave = () => {
     console.log(input);
-    seteditinput(input);
     dispatch(Myeditdata({ id: workId, data: input}));
   };
 

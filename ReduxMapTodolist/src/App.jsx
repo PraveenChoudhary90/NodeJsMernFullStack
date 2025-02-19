@@ -9,16 +9,16 @@ function App() {
   const [input, setinput] = useState("");
   const mydata = useSelector(state=>state.todolist.task);
   const dispatch = useDispatch();
-  const [workId, setWorkId] =useState("");
+  const [workId, setWorkId] = useState("");
   console.log(mydata)
 
-  const EditTask = (id,work)=>{
+  const EditTask =(id,work)=>{
     setinput(work);
     setWorkId(id);
   }
 
      const myEditSave = () => {
-    dispatch(Myeditdata({ data: input, id: workId }));
+    dispatch(Myeditdata({id: workId, data:input }));
     
   };
  
@@ -42,7 +42,7 @@ function App() {
     <>
      <h1>Welcome to our todolist</h1>
      Enter the Task: <input type='text' value={input} onChange={(e)=>{setinput(e.target.value)}}/>
-     <Button variant="success" onClick={()=>{dispatch(Myaddtask({work:input, id:Date.now()}))}}>Click Add</Button>
+     <Button variant="success" onClick={()=>{dispatch(Myaddtask({id:Date.now(),work:input,}))}}>Click Add</Button>
      <Button variant="info" onClick={myEditSave} > Click Edit</Button>
      <hr size="6" color='red' />
       <Table striped bordered hover>

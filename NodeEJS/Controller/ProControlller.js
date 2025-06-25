@@ -1,15 +1,15 @@
 
 
 const Homepage =(req,res)=>{
-    res.send("Home page here");
+    res.render("Home");
 }
 
 const Aboutpage =(req,res)=>{
-    res.send("About page here");
+    res.render("About");
 }
 
 const Insertpage =(req,res)=>{
-    res.send("Insert page here");
+    res.render("Insert");
 }
 
 
